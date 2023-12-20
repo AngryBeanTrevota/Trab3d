@@ -19,6 +19,8 @@ public class ThirdPersonController : MonoBehaviour
 
     public Animator animator;
 
+    private bool isCollidingWithTerrain = false;
+
 
     void Start()
     {
@@ -92,12 +94,18 @@ public class ThirdPersonController : MonoBehaviour
         }
 
 
+        if (isCollidingWithTerrain)
+        {
+            return;
+        }
 
 
-        Debug.Log("Player Foward: (" + dir.x.ToString() +","+ dir.y.ToString() +","+ dir.z.ToString() + ")");
+
+        //Debug.Log("Player Foward: (" + dir.x.ToString() +","+ dir.y.ToString() +","+ dir.z.ToString() + ")");
         Vector3 pos = new Vector3(0, 0, 0);
         pos.x += dir.x * movementSpeed*Time.deltaTime + player.transform.position.x;
         pos.z += dir.z * movementSpeed*Time.deltaTime + player.transform.position.z;
+        pos.y = player.transform.position.y;
 
 
         player.transform.position = pos;
@@ -138,6 +146,23 @@ public class ThirdPersonController : MonoBehaviour
         }
 
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Terrain")
+        {
+            isCollidingWithTerrain = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Terrain")
+        {
+            isCollidingWithTerrain = false;
+        }
+
+    }
+
 
 
 }
