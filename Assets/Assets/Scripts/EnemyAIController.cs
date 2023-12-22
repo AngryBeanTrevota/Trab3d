@@ -141,6 +141,7 @@ public class EnemyAIController : MonoBehaviour
     public void increaseSpeed(float inc)
     {
         this.speed += inc;
+        agent.speed = speed;
     }
 }
 

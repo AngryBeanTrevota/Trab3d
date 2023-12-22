@@ -51,7 +51,7 @@ public class GameDirectorScript : MonoBehaviour
         //20 meters behind player
 
         GameObject g = Instantiate(enemy);
-        g.GetComponent<EnemyAIController>().increaseSpeed((score+5)/10.0f);
+        g.GetComponent<EnemyAIController>().increaseSpeed((score*10)/10.0f);
         g.transform.position =  player.transform.position + (player.transform.forward*-15);
 
         //Generate a new piece of bread around the player
@@ -61,7 +61,7 @@ public class GameDirectorScript : MonoBehaviour
         Vector3 targetPosition = new Vector3(randomPoint.x, 0f, randomPoint.y) + player.position;
 
 
-        //No time for a check of colision on 
+        //No time for a check of colision on other objects
 
         GameObject b = Instantiate(bread);
         targetPosition.y = 3.0f;
