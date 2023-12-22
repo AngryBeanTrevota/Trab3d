@@ -186,6 +186,7 @@ public class ThirdPersonController : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Game Over");
+            FindObjectOfType<GameDirectorScript>().showGameOver();
             Destroy(this.gameObject);
         }
     }

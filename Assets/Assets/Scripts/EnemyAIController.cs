@@ -37,6 +37,7 @@ public class EnemyAIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        agent.speed = speed;
 
         if (isChasingPlayer)
         {
@@ -135,6 +136,11 @@ public class EnemyAIController : MonoBehaviour
 
 
         }
+    }
+
+    public void increaseSpeed(float inc)
+    {
+        this.speed += inc;
     }
 }
 
