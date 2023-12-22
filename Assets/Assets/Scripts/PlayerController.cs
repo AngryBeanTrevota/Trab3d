@@ -152,6 +152,24 @@ public class ThirdPersonController : MonoBehaviour
         {
             isCollidingWithTerrain = true;
         }
+
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Collectable")
+        {
+            Debug.Log("Collected a bread...");
+            //Send signal to game director
+
+            Destroy(other.gameObject);
+            FindObjectOfType<GameDirectorScript>().addScore();
+            //Instantiate some particles for the heck of it
+
+        }
+
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -161,6 +179,15 @@ public class ThirdPersonController : MonoBehaviour
             isCollidingWithTerrain = false;
         }
 
+
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Game Over");
+            Destroy(this.gameObject);
+        }
     }
 
 
