@@ -23,6 +23,7 @@ public class GameDirectorScript : MonoBehaviour
     private Vector2 levelBound;
 
     public TextMeshProUGUI scoreCounter;
+    AudioHandler audioHandler;
 
 
 
@@ -34,13 +35,17 @@ public class GameDirectorScript : MonoBehaviour
         score = 0;
         scoreCounter.text = score.ToString();
 
-
         levelCenter = new Vector2(430, 515); //eyeing it
         levelBound = new Vector2(140, 150);
 
         
     }
 
+    void Start()
+    {
+        audioHandler = FindObjectOfType<AudioHandler>();
+        audioHandler.Play("plimPlimPlom");
+    }
 
     public void addScore()
     {
@@ -79,6 +84,8 @@ public class GameDirectorScript : MonoBehaviour
 
     public void showGameOver()
     {
+        audioHandler.Stop("plimPlimPlom");
+        audioHandler.Play("gameOver");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         gameOverPanel.SetActive(true);

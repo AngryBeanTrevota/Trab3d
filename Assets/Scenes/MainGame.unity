@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44658792, g: 0.49642283, b: 0.5748252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14449,6 +14449,9 @@ GameObject:
   m_Component:
   - component: {fileID: 851651347}
   - component: {fileID: 851651346}
+  - component: {fileID: 851651348}
+  - component: {fileID: 851651349}
+  - component: {fileID: 851651350}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -14522,6 +14525,89 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &851651348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851651345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cca7b2a44aa04f2a35230f8842c433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &851651349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851651345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0e5abb291b7c6b593d9404125daba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Audios:
+  - Name: plimPlimPlom
+    AudioClip: {fileID: 8300000, guid: 8ad8ad0f4c30fd065b887f91d11e6899, type: 3}
+    Volume: 1
+    Source: {fileID: 0}
+    loop: 1
+  - Name: gameOver
+    AudioClip: {fileID: 8300000, guid: 29642970deebdc06d814cde8f5561e29, type: 3}
+    Volume: 1
+    Source: {fileID: 0}
+    loop: 0
+  - Name: 
+    AudioClip: {fileID: 0}
+    Volume: 1
+    Source: {fileID: 0}
+    loop: 0
+  - Name: 
+    AudioClip: {fileID: 0}
+    Volume: 1
+    Source: {fileID: 0}
+    loop: 0
+  - Name: 
+    AudioClip: {fileID: 0}
+    Volume: 1
+    Source: {fileID: 0}
+    loop: 0
+  - Name: 
+    AudioClip: {fileID: 0}
+    Volume: 1
+    Source: {fileID: 0}
+    loop: 0
+  - Name: 
+    AudioClip: {fileID: 0}
+    Volume: 1
+    Source: {fileID: 0}
+    loop: 0
+  - Name: 
+    AudioClip: {fileID: 0}
+    Volume: 1
+    Source: {fileID: 0}
+    loop: 0
+  - Name: 
+    AudioClip: {fileID: 0}
+    Volume: 1
+    Source: {fileID: 0}
+    loop: 0
+  - Name: 
+    AudioClip: {fileID: 0}
+    Volume: 1
+    Source: {fileID: 0}
+    loop: 0
+--- !u!81 &851651350
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851651345}
+  m_Enabled: 1
 --- !u!1 &852361828 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4fc3a1ca74724fb419ae282d4ebe32bd, type: 3}

@@ -6,14 +6,15 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    AudioHandler audioHandler;
     private void Awake()
     {
         Screen.SetResolution(1280, 720, false);
     }
     void Start()
     {
-        
+        audioHandler = FindObjectOfType<AudioHandler>();
+        audioHandler.Play("glockInMyRari");
     }
 
     // Update is called once per frame
@@ -25,7 +26,7 @@ public class MenuController : MonoBehaviour
     public void loadNextScene()
     {
         SceneManager.LoadScene(1);
-
+        audioHandler.Stop("glockInMyRari");
     }
 
 
